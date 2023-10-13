@@ -368,17 +368,17 @@ function deathOfPlayer() {
   ctx.fillStyle = "black";
   ctx.font = "800% serif";
   ctx.fillText(
-    "You are dead",
+    "You're bad",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 5,
     (canvas.width / 16) * 14
   );
-  ctx.font = "500% serif";
+  ctx.font = "300% serif";
   ctx.fillText(
-    "Hit any key to restart",
+    "Try not to be so bad this time.",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
-    (canvas.width / 16) * 14
+    (canvas.width / 24) * 14
   );
   if (keyPress.any) {
     keyPress.any = false;
@@ -507,7 +507,6 @@ function drawCollectables() {
     }
   }
 }
-
 function collectablesCollide() {
   for (var i = 0; i < collectables.length; i++) {
     if (
@@ -543,6 +542,7 @@ function createCannon(
       projectileWidth: width,
       projectileHeight: height,
     });
+
   } else if (wallLocation === "bottom") {
     cannons.push({
       x: position,
@@ -676,16 +676,16 @@ function keyboardControlActions() {
 
 function handleKeyDown(e) {
   keyPress.any = true;
-  if (e.key === "ArrowUp" || e.key === "w") {
+  if (e.key === "a" || e.key === "}") {
     keyPress.up = true;
   }
-  if (e.key === "ArrowLeft" || e.key === "a") {
+  if (e.key === "[" || e.key === ",") {
     keyPress.left = true;
   }
-  if (e.key === "ArrowDown" || e.key === "s") {
+  if (e.key === "?" || e.key === "1") {
     keyPress.down = true;
   }
-  if (e.key === "ArrowRight" || e.key === "d") {
+  if (e.key === "`" || e.key === "0") {
     keyPress.right = true;
   }
   if (e.key === " ") {
@@ -694,20 +694,20 @@ function handleKeyDown(e) {
 }
 
 function handleKeyUp(e) {
-  if (e.key === "ArrowUp" || e.key === "w") {
+  if (e.key === "a" || e.key === "}") {
     keyPress.up = false;
   }
-  if (e.key === "ArrowLeft" || e.key === "a") {
+  if (e.key === "[" || e.key === ",") {
     keyPress.left = false;
   }
-  if (e.key === "ArrowDown" || e.key === "s") {
+  if (e.key === "?" || e.key === "1") {
     keyPress.down = false;
     if (currentAnimationType === animationTypes.duck) {
       duckTimer = 8;
       frameIndex = 20;
     }
   }
-  if (e.key === "ArrowRight" || e.key === "d") {
+  if (e.key === "`" || e.key === "0") {
     keyPress.right = false;
   }
   if (e.key === " ") {

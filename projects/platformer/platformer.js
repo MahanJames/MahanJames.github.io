@@ -17,7 +17,7 @@ $(function () {
     }
     //create walls
     createPlatform(-50, -50, canvas.width + 100, 50); //top
-    createPlatform(-50, canvas.height - 10, canvas.width + 100, 200); //right
+    createPlatform (-50, canvas.height - 10, canvas.width + 100, 200); //right
     createPlatform(-50, -50, 50, canvas.height + 500); //bottom
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
 
@@ -49,6 +49,7 @@ $(function () {
     createPlatform(830, 450, 150, 20)
     createPlatform(1230, 380, 320, 40)
     createPlatform(1230, 524, 30, 1200)
+    
 
     // TODO 2
     // Create collectables
@@ -68,6 +69,7 @@ $(function () {
     createCannon('left',635,840)
     createCannon('top',470,1100)
     createCannon('top',1250,1100)
+    createCannon('top',750,10000, 1750, 1750)
 
 
     /////////////////////////////////////////////////
